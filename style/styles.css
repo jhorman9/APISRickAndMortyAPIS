@@ -1,0 +1,130 @@
+body{
+    width: 100%;
+    height: auto;
+    background: #000;
+    overflow-x: hidden;
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header h1{
+    text-align: center;
+    text-shadow: 5px 3px 10px rgba(53, 195, 6, 0.945);
+}
+
+header h1::selection{
+    color: yellow;
+    background-color: brown;
+}
+
+main{
+    width: 75%;
+    margin: auto;
+}
+
+@media (max-width: 1200px) {
+    main{
+        width: 100%
+    }
+}
+
+main section{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+}
+
+@media (max-width: 900px) {
+    main section{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    main section{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    main section{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+main section .card {
+    margin-top: 20px;
+    width: 220px;
+    height: 350px;
+    background-color: #3a5a40;
+    border-radius: 15px;
+    padding: 20px 0;
+}
+
+main section .card .imagen{
+    width: 100%;
+    height: 50%; /*175px*/
+}
+
+main section .card .imagen img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+main section .card .data-user{
+    width: 100%;
+    text-align: center;
+}
+
+main .btns{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: auto;
+    padding: 25px 0;
+}
+
+main .btns .next{
+    width: fit-content;
+    height: fit-content;
+    background-color: green;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px rgba(255, 222, 222, 0.25);
+}
+
+main .btns .next:hover{
+    background-color: #3a5a40;
+    cursor: pointer;
+    color: black;
+    }
+
+main .btns .prev{
+    width: fit-content;
+    height: fit-content;
+    background-color: green;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px rgba(255, 222, 222, 0.25);
+}
+
+main .btns .prev:hover{
+    background-color: #3a5a40;
+    cursor: pointer;
+    color: black;
+    }
+
+footer{
+    padding-top: 25px;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+footer h3 {
+    margin: 0;
+}
