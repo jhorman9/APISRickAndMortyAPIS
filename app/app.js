@@ -33,12 +33,10 @@ const printData = (data) =>{
     insert.innerHTML = html;
 }
 
-let datas = "";
-
 const allUsers = (informacion) =>{
 
-    let html = `<div class="prev ${preDisable}" onclick="getData('${informacion.prev}')">PREV</div>`;
-    html += `<div class="next ${nextDisable}" onclick="getData('${informacion.next}')">NEXT</div>`;
+    let html = `<div class="prev" onclick="getData('${informacion.prev}')">PREV</div>`;
+    html += `<div class="next" onclick="getData('${informacion.next}')">NEXT</div>`;
     btns.innerHTML = html;
 }
 
