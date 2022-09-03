@@ -14,13 +14,12 @@ const getData = (ApiUrl) => {
     .catch(error => {console.log("Error", error);})
 }
 
-let html = "";
-
 const printData = (data) =>{
+    let html = "";
     data.results.forEach(user => {
         html += `<div class="card">
         <div class="imagen">
-            <img src="${user.image}" alt="${user.name}">
+            <img src="${user.image}" alt="Photo:  ${user.name}">
         </div>
         <div class="data-user">
             <h4>Name: ${user.name}</h4>
@@ -35,9 +34,18 @@ const printData = (data) =>{
 
 const allUsers = (informacion) =>{
 
-    let html = `<div class="prev" onclick="getData('${informacion.prev}')">PREV</div>`;
-    html += `<div class="next" onclick="getData('${informacion.next}')">NEXT</div>`;
+    let html = `<div class="prev ${informacion.prev}" onclick="getData('${informacion.prev}')">PREV</div>`;
+    html += `<div class="next ${informacion.next}" onclick="getData('${informacion.next}')">NEXT</div>`;
     btns.innerHTML = html;
+
+    const prevDisplayNone = document.querySelector(".prev");
+    const nextDisplayNone = document.querySelector(".next");
+
+    if (prevDisplayNone.className.includes("null")) {
+        prevDisplayNone.style.display = "none";
+    }else if(nextDisplayNone.className.includes("null")) {
+        nextDisplayNone.style.display = "none";
+    }
 }
 
 getData(API)
