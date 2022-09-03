@@ -8,7 +8,7 @@ const getData = (ApiUrl) => {
     .then(response => response.json())
     .then(json =>{
         printData(json),
-        allUsers(json.info)
+        btnsPrevAndNext(json.info)
         }
     )
     .catch(error => {console.log("Error", error);})
@@ -32,7 +32,7 @@ const printData = (data) =>{
     insert.innerHTML = html;
 }
 
-const allUsers = (informacion) =>{
+const btnsPrevAndNext = (informacion) =>{
 
     let html = `<div class="prev ${informacion.prev}" onclick="getData('${informacion.prev}')">PREV</div>`;
     html += `<div class="next ${informacion.next}" onclick="getData('${informacion.next}')">NEXT</div>`;
